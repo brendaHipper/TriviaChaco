@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+/* Color de fondo */
+body, html { 
+    font-size: 100%; 	
+    padding: 0; 
+    margin: 0; 
+    background: rosybrown;
+}
+
+/* Titulo */
+.main > section h2 {
+	font-weight: 300;
+	color: #ccc;
+}
+
+/* Ancho de los botones*/
+.main > section {
+	max-width: 260px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+/* propiedades de los botones */
+.main > section button {
+	border: none;
+	background: #47a3da;
+	color: #fff;
+	padding: 1.5em;
+	display: block;
+	width: 100%;
+	cursor: pointer;
+	margin: 10px 0;
+	font-size: 0.8em;
+}
+
+/* Efectos de los botones */
+.main > section button:hover {
+	background: #258ecd;
+}
+
+.main > section button.active {
+	background: #0d77b6;
+}
+
+.main > section button.disabled {
+	background: #aaa;
+	pointer-events: none;
+}

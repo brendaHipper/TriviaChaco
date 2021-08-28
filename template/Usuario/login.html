@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Usuario</title>
+    <!-- Customize CSS Stylesheet-->
+    <link rel="stylesheet" href="{% static 'css/styleLogin.css' %}">
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="login-page">
+            <h1>Inicio de Sesión</h1>
+            <div class="form">
+              <form class="login-form">
+                {{form.as_p}}
+                <button type="submit/static">
+                    Enviar
+                </button>
+              </form>
+            </div>
+          </div>
+          <!-- <img src="{% static 'css/GIF - Bandera sin capa negra.gif' %}"/> -->
+    </form>
+</body>
+</html>
+

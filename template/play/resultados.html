@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+</head>
+<body>
+{% block contenido %}
+<div class="container">
+    <div class="jumbotron my-4">
+        <!--El método safe tiene que ver con texto y descripción-->
+        <h3 class="text-info">{{respondida.pregunta.texto|safe}}</h3>
+        <!--Muestra la pregunta que se ah respondido-->
+        <p>
+            <strong>Tu respuesta:</strong>
+            {{respondida.respuesta.texto|safe}}
+        </p>
+        {% if respondida.respuesta.correcta %}
+            <h4 class="text-success">Siii!! Tu respuesta es correcta</h4>
+        {% else %}
+            <h4 class="text-danger">Tu respuesta es incorrecta!!</h4>
+        {% endif %}
+        
+        <a href="{% url 'jugar' %}">
+            <button class="btn-success">
+                Continuar con la siguiente pregunta
+            </button>
+        </a>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
