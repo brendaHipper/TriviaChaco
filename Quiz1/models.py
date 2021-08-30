@@ -62,10 +62,11 @@ class QuizUsuario(models.Model):
 		self.actualizar_puntaje()
 
 	def actualizar_puntaje(self):
-		puntaje_actualizado = self.intentos.filter(correcta=True).aggregate(
+		puntaje_actualizado = self.intentos.filter().aggregate(
 			models.Sum('puntaje_obtenido'))['puntaje_obtenido__sum']
 
 		self.puntaje_total = puntaje_actualizado
+		# lo que se comenta
 		self.save()
 
 class PreguntasRespondidas(models.Model):

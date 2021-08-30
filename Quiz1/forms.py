@@ -49,7 +49,7 @@ class UsuarioLoginFormulario(forms.Form):
 class RegistroFormulario(UserCreationForm):
     username = forms.CharField(required=True)
     email = forms.EmailField(required=True)
-    password1 = forms.CharField(required=True)
+    # contraseña = forms.CharField(required=True)
 
     # Class meta que heredará,instanciará de usuario
     class Meta:
@@ -60,7 +60,4 @@ class RegistroFormulario(UserCreationForm):
         fields = [
 			'username',
 			'email',
-			'password1',
-			'password2'
-
 		]
