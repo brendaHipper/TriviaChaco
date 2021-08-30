@@ -8,7 +8,10 @@ from .views import (
             registro, 
             loginView, 
             logout_vista, 
-            HomeUsuario, 
+            niveles,
+            facil,
+            medio,
+            dificil, 
             jugar,
             resultado_pregunta,
             tablero)
@@ -16,7 +19,10 @@ from .views import (
 # va contener una lista de urls o rutas. Crea las urls
 urlpatterns = [
     path('',inicio, name='inicio'),
-    path('HomeUsuario/',HomeUsuario, name='HomeUsuario'),
+    path('niveles/',niveles, name='niveles'),
+    path('facil/',facil, name='facil'),
+    path('medio/',medio, name='medio'),
+    path('dificil/',dificil, name='dificil'),
     path('login/',loginView, name='login'),
     path('logout_vista/',logout_vista, name='logout_vista'),
     path('registro/',registro, name='registro'),

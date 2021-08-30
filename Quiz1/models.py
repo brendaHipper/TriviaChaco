@@ -15,11 +15,18 @@ class Pregunta(models.Model):
 		('DEPORTE','Deporte')
 	]
 
+	NIVELES = [
+		('FACIL', 'Facil'),
+		('MEDIO', 'Medio'),
+		('DIFICIL', 'Dificil')
+	]
+
 	NUMER_DE_RESPUESTAS_PERMITIDAS = 1
 
 	texto = models.TextField(verbose_name='Texto de la pregunta')
 	categoria = models.CharField(max_length=50,choices= CATEGORIAS,default='')
 	max_puntaje = models.DecimalField(verbose_name='Maximo Puntaje', default=3, decimal_places=2, max_digits=6)
+	nivel = models.CharField(max_length=50,choices=NIVELES,default='')
 
 	def __str__(self):
 		return self.texto 

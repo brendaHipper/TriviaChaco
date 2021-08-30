@@ -17,9 +17,22 @@
             <h2>Menú Principal</h2>
             <!-- Class "cbp-spmenu-open" gets applied to menu -->
             <button href="#">Reglas del Juego</button>
-            <button href="#">Nivel Fácil</button>
-            <button href="#">Nivel Medio</button>
-            <button href="#">Nivel Díficil</button>
+            <a href="{% url 'facil' %}">
+                <button class="btn-success">
+                    Nivel Fácil
+                </button>
+            </a>
+            <a href="{% url 'medio' %}">
+                <button class="btn-success">
+                    Nivel Medio
+                </button>
+            </a>
+            <a href="{% url 'dificil' %}">
+                <button class="btn-success">
+                    Nivel Díficil
+                </button>
+            </a>
+            <!-- <button href="#">Nivel Fácil</button> -->
         </section>
     </div>
 </body>

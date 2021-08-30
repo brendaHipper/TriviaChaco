@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- {% load static %} -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/styleJugar.css' %}"> -->
+</head>
+<body>
+    
+{% block contenido %}
+
+{% if pregunta is None %}
+
+<div class="container">
+    <div class="jumbotron my-4">
+        <h1>Finalizaste el Juego!!. Mira el tablero de posiciones</h1>
+        <a href="{% url 'tablero' %}">
+            <button class="btn-success">
+                Ver Aqui el Tablero
+            </button>
+        </a>
+    </div>
+</div>
+<!--Sentencia de else que chequea la respuesta introducida -->
+{% else %}
+<div class="container">
+    <h2>
+        {{pregunta.categoria}}
+    </h2>
+    <h3>
+        {{pregunta.texto}}
+    </h3>
+        <form method="POST" class="form">
+            {% csrf_token %}
+            <div class="quiz-container" id="quiz">
+                <input type="hidden" name="pregunta_pk" value="{{pregunta.pk}}">
+
+            {% for opciones in pregunta.opciones.all %}
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="respuesta_pk" value="{{opciones.pk}}" id="choice-{{forloop.counter}}">
+                <label class="form-check-label" for="choice-{{forloop.counter}}">
+                    {{opciones.texto}}
+                </label>
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success">
+                Enviar
+            </button>
+        </form>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+</body>
+</html>

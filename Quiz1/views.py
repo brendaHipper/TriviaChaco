@@ -18,9 +18,9 @@ def inicio(request):
 	return render(request, 'inicio.html', context)
 
 
-def HomeUsuario(request):
+def niveles(request):
 
-	return render(request, 'Usuario/home.html')
+	return render(request, 'play/niveles.html')
 
 
 def tablero(request):
@@ -64,6 +64,93 @@ def jugar(request):
 
 	return render(request, 'play/jugar.html', context)
 
+def facil(request):
+
+	QuizUser, created = QuizUsuario.objects.get_or_create(usuario=request.user)
+
+	if request.method == 'POST':
+		pregunta_pk = request.POST.get('pregunta_pk')
+		pregunta_respondida = QuizUser.intentos.select_related('pregunta').get(pregunta__pk=pregunta_pk)
+		respuesta_pk = request.POST.get('respuesta_pk')
+
+		try:
+			opcion_selecionada = pregunta_respondida.pregunta.opciones.get(pk=respuesta_pk)
+		except ObjectDoesNotExist:
+			raise Http404
+
+		QuizUser.validar_intento(pregunta_respondida, opcion_selecionada)
+
+		return redirect('resultado', pregunta_respondida.pk)
+
+	else:
+		pregunta = QuizUser.obtener_nuevas_preguntas()
+		if pregunta is not None:
+			QuizUser.crear_intentos(pregunta)
+
+		context = {
+			'pregunta':pregunta
+		}
+
+	return render(request, 'play/facil.html', context)
+
+def medio(request):
+
+	QuizUser, created = QuizUsuario.objects.get_or_create(usuario=request.user)
+
+	if request.method == 'POST':
+		pregunta_pk = request.POST.get('pregunta_pk')
+		pregunta_respondida = QuizUser.intentos.select_related('pregunta').get(pregunta__pk=pregunta_pk)
+		respuesta_pk = request.POST.get('respuesta_pk')
+
+		try:
+			opcion_selecionada = pregunta_respondida.pregunta.opciones.get(pk=respuesta_pk)
+		except ObjectDoesNotExist:
+			raise Http404
+
+		QuizUser.validar_intento(pregunta_respondida, opcion_selecionada)
+
+		return redirect('resultado', pregunta_respondida.pk)
+
+	else:
+		pregunta = QuizUser.obtener_nuevas_preguntas()
+		if pregunta is not None:
+			QuizUser.crear_intentos(pregunta)
+
+		context = {
+			'pregunta':pregunta
+		}
+
+	return render(request, 'play/medio.html', context)
+
+def dificil(request):
+
+	QuizUser, created = QuizUsuario.objects.get_or_create(usuario=request.user)
+
+	if request.method == 'POST':
+		pregunta_pk = request.POST.get('pregunta_pk')
+		pregunta_respondida = QuizUser.intentos.select_related('pregunta').get(pregunta__pk=pregunta_pk)
+		respuesta_pk = request.POST.get('respuesta_pk')
+
+		try:
+			opcion_selecionada = pregunta_respondida.pregunta.opciones.get(pk=respuesta_pk)
+		except ObjectDoesNotExist:
+			raise Http404
+
+		QuizUser.validar_intento(pregunta_respondida, opcion_selecionada)
+
+		return redirect('resultado', pregunta_respondida.pk)
+
+	else:
+		pregunta = QuizUser.obtener_nuevas_preguntas()
+		if pregunta is not None:
+			QuizUser.crear_intentos(pregunta)
+
+		context = {
+			'pregunta':pregunta
+		}
+
+	return render(request, 'play/dificil.html', context)
+
 
 
 def resultado_pregunta(request, pregunta_respondida_pk):
@@ -82,7 +169,7 @@ def loginView(request):
 		password = form.cleaned_data.get("password")
 		usuario = authenticate(username=username, password=password)
 		login(request, usuario)
-		return redirect('HomeUsuario')
+		return redirect('niveles')
 
 	context = {
 		'form':form,
