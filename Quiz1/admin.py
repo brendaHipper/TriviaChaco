@@ -29,7 +29,7 @@ class PreguntaAdmin(admin.ModelAdmin):
 # Clase que va mostrar los campos en pantalla
 class PreguntasRespondidasAdmin(admin.ModelAdmin):
     
-    list_display = ['pregunta','respuesta','correcta','puntaje_obtenido']
+    list_display = ['pregunta','respuesta','correcta','puntaje_obtenido','categoria']
 
     class Meta:
         model = PreguntasRespondidas

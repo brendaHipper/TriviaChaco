@@ -6,10 +6,19 @@ from django.contrib.auth.models import User
 import random
 
 class Pregunta(models.Model):
+	CATEGORIAS = [
+		('HISTORIA', 'Historia'),
+		('GEOGRAFIA','Geografía'),
+        ('EDUCACION', 'Educación'),
+        ('ECONOMIA', 'Economía'),
+		('CULTURA','Cultura'),
+		('DEPORTE','Deporte')
+	]
 
 	NUMER_DE_RESPUESTAS_PERMITIDAS = 1
 
 	texto = models.TextField(verbose_name='Texto de la pregunta')
+	categoria = models.CharField(max_length=50,choices= CATEGORIAS,default='')
 	max_puntaje = models.DecimalField(verbose_name='Maximo Puntaje', default=3, decimal_places=2, max_digits=6)
 
 	def __str__(self):
@@ -66,7 +75,6 @@ class QuizUsuario(models.Model):
 			models.Sum('puntaje_obtenido'))['puntaje_obtenido__sum']
 
 		self.puntaje_total = puntaje_actualizado
-		# lo que se comenta
 		self.save()
 
 class PreguntasRespondidas(models.Model):

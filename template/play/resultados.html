@@ -10,6 +10,9 @@
 {% block contenido %}
 <div class="container">
     <div class="jumbotron my-4">
+        <h2>
+            {{pregunta.categoria}}
+        </h2>
         <!--El método safe tiene que ver con texto y descripción-->
         <h3 class="text-info">{{respondida.pregunta.texto|safe}}</h3>
         <!--Muestra la pregunta que se ah respondido-->
