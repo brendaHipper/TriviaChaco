@@ -6,7 +6,7 @@ from .forms import RegistroFormulario, UsuarioLoginFormulario
 
 from .models import QuizUsuario, Pregunta, PreguntasRespondidas
 
-
+# método de inicio
 def inicio(request):
 
 	context = {
@@ -17,16 +17,17 @@ def inicio(request):
 
 	return render(request, 'inicio.html', context)
 
-
+# si el usuario se logueo correctamente, se va renderizar a la pantalla de niveles
 def niveles(request):
 
 	return render(request, 'play/niveles.html')
 
 
 def tablero(request):
+	# tomar los primeros 10 usuarios para mostrar en el tablero de posiciones
 	total_usaurios_quiz = QuizUsuario.objects.order_by('-puntaje_total')[:10]
 	contador = total_usaurios_quiz.count()
-
+	# se cre un dicc con el nombre context para pasar los valores 
 	context = {
 
 		'usuario_quiz':total_usaurios_quiz,
@@ -36,10 +37,11 @@ def tablero(request):
 	return render(request, 'play/tablero.html', context)
 
 def jugar(request):
-
+	''' El usuario esta logueado y se ah creado automaticamente con get_or_create (devuelve una tupla) '''
 	QuizUser, created = QuizUsuario.objects.get_or_create(usuario=request.user)
-
+	''' Si el método de petición es POST VA entrar cuando en el formulario se valide la repuesta '''
 	if request.method == 'POST':
+		# Obtiene el id de la pregunta 
 		pregunta_pk = request.POST.get('pregunta_pk')
 		pregunta_respondida = QuizUser.intentos.select_related('pregunta').get(pregunta__pk=pregunta_pk)
 		respuesta_pk = request.POST.get('respuesta_pk')
@@ -54,6 +56,7 @@ def jugar(request):
 		return redirect('resultado', pregunta_respondida.pk)
 
 	else:
+		# variable pregunta, donde accedo al método obtener_nuevas_preguntas() de la clase QuizUsuario
 		pregunta = QuizUser.obtener_nuevas_preguntas()
 		if pregunta is not None:
 			QuizUser.crear_intentos(pregunta)
@@ -183,10 +186,13 @@ def registro(request):
 	titulo = 'Crear una Cuenta'
 	if request.method == 'POST':
 		form = RegistroFormulario(request.POST)
+		# Si es formulario es válido, que guarde el mismo, y redireccione loguin
 		if form.is_valid():
 			form.save()
+			# Una vez el registro se complete de forma correcta que redireccione a loguin
 			return redirect('login')
 	else:
+		# de lo contrario si no es un método POST, no se le va pasar la petición POST --> request.POST
 		form = RegistroFormulario()
 
 	context = {
@@ -198,7 +204,7 @@ def registro(request):
 
 	return render(request, 'Usuario/registro.html', context)
 
-
+# Recibe la petición de cierre de sesión. Y con la barra se redirecciona al inicio
 def logout_vista(request):
 	logout(request)
 	return redirect('/')

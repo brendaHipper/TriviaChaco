@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body {
+    background: white;
+}
+
+.contenedorTablero {
+    width: 900px;
+    height: 900px;
+    border: black 5px dashed solid black;
+}
+
+.container {
+    width: 900px;
+    height: 900px;
+    border: black 5px dashed solid black;
+}

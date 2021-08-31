@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-# Administrador, donde se instancian las clases modelo Pregunta y Respuesta
+# Administrador. Acá se instancian las clases modelo Pregunta y Respuesta
 # Aca importa las clases Pregunta y ElegirRespuesta que se necesitarán para el registro
 from .models import Pregunta,ElegirRespuesta,PreguntasRespondidas, QuizUsuario
 
@@ -19,7 +19,7 @@ class ElegirRespuestaInline(admin.TabularInline):
 
 class PreguntaAdmin(admin.ModelAdmin):
     model = Pregunta
-    # en inlines crea una Tupla
+    # en inlines se crea una Tupla
     inlines = (ElegirRespuestaInline, )
     # Toma el texto y crea una lista
     list_display = ['texto',]

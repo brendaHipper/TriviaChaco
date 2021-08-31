@@ -6,27 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego</title>
-    <!-- <link rel="stylesheet" href="{% static 'css/styleJugar.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/styleFacil.css' %}">
 </head>
 <body>
     
 {% block contenido %}
 
 {% if pregunta is None %}
-
-<div class="container">
-    <div class="jumbotron my-4">
-        <h1>Finalizaste el Juego!!. Mira el tablero de posiciones</h1>
+<div class="contenedorTablero">
+    <h1>Finalizaste el Juego!!. Mira el tablero de posiciones</h1>
         <a href="{% url 'tablero' %}">
             <button class="btn-success">
                 Ver Aqui el Tablero
             </button>
         </a>
-    </div>
 </div>
 <!--Sentencia de else que chequea la respuesta introducida -->
 {% else %}
 <div class="container">
+    {% if pregunta.nivel is facil %}
     <h2>
         {{pregunta.categoria}}
     </h2>
@@ -52,6 +50,7 @@
         </form>
     </div>
 </div>
+{% endif %}
 {% endif %}
 {% endblock %}
 </body>
