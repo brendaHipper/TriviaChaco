@@ -1,0 +1,53 @@
+.h1{
+	padding: 2%;
+	text-align: center;
+	font-family: 'Staatliches', cursive;
+	color: #000;
+}
+
+.span.info {
+	font-family: 'Staatliches', cursive;
+	color: #000;
+}
+
+body {
+	background-color: #1DB062;
+}
+
+img{
+	padding-left: 93%;
+	padding-top: 0%;
+}
+
+#main-container {
+	margin: 5px auto;
+	width: 600px;
+}
+
+table {
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+	font-family: 'Staatliches', cursive;
+}
+
+th, td {
+	padding: 20px;
+}
+
+thead {
+	background-color: #FDC049;
+	border-bottom: solid 5px #000;
+	color: #000;
+	font-family: 'Staatliches', cursive;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: rgb(114, 250, 143);
+	color: white;
+}

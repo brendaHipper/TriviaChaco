@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 body{
-	background-color: rgb(15, 104, 7);
+	background: #1DB062;
 	font-family: 'Oswald', sans-serif;
 	text-align: center;
 	color: #FFF;
@@ -39,11 +39,13 @@ button:hover{
 	font-size: 3em;
 	font-weight: 400;
 	text-transform: uppercase;
+	font-family: 'Staatliches', cursive;
 }
 
 #start-page > h2{
 	font-size: 1.5em;
 	font-weight: 300;
 	margin: 15px 0 40px 0;
+	font-family: 'Staatliches', cursive;
 }
 

@@ -9,9 +9,7 @@ from .views import (
             loginView, 
             logout_vista, 
             niveles,
-            facil,
-            medio,
-            dificil, 
+            reglasJuego, 
             jugar,
             resultado_pregunta,
             tablero)
@@ -20,9 +18,7 @@ from .views import (
 urlpatterns = [
     path('',inicio, name='inicio'),
     path('niveles/',niveles, name='niveles'),
-    path('facil/',facil, name='facil'),
-    path('medio/',medio, name='medio'),
-    path('dificil/',dificil, name='dificil'),
+    path('reglasJuego/',reglasJuego, name='reglasJuego'),
     path('login/',loginView, name='login'),
     path('logout_vista/',logout_vista, name='logout_vista'),
     path('registro/',registro, name='registro'),

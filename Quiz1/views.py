@@ -36,6 +36,10 @@ def tablero(request):
 
 	return render(request, 'play/tablero.html', context)
 
+def reglasJuego(request):
+
+	return render(request, 'play/reglasJuego.html')
+
 def jugar(request):
 	''' El usuario esta logueado y se ah creado automaticamente con get_or_create (devuelve una tupla) '''
 	QuizUser, created = QuizUsuario.objects.get_or_create(usuario=request.user)
@@ -56,111 +60,30 @@ def jugar(request):
 		return redirect('resultado', pregunta_respondida.pk)
 
 	else:
-		# variable pregunta, donde accedo al método obtener_nuevas_preguntas() de la clase QuizUsuario
-		pregunta = QuizUser.obtener_nuevas_preguntas()
+		nivel = request.GET.get("nivel")
+		# variable pregunta, donde accedo al método obtener_nuevas_preguntas() de la clase QuizUsuario y filtro por nivel
+		pregunta = QuizUser.obtener_nuevas_preguntas(nivel)
 		if pregunta is not None:
 			QuizUser.crear_intentos(pregunta)
 
+		puntajeTotal = QuizUser.puntaje_total
+
 		context = {
-			'pregunta':pregunta
+			'pregunta':pregunta,
+			'nivel':nivel,
+			'puntajeTotal':puntajeTotal,
 		}
 
 	return render(request, 'play/jugar.html', context)
 
-def facil(request):
-
-	QuizUser, created = QuizUsuario.objects.get_or_create(usuario=request.user)
-
-	if request.method == 'POST':
-		pregunta_pk = request.POST.get('pregunta_pk')
-		pregunta_respondida = QuizUser.intentos.select_related('pregunta').get(pregunta__pk=pregunta_pk)
-		respuesta_pk = request.POST.get('respuesta_pk')
-
-		try:
-			opcion_selecionada = pregunta_respondida.pregunta.opciones.get(pk=respuesta_pk)
-		except ObjectDoesNotExist:
-			raise Http404
-
-		QuizUser.validar_intento(pregunta_respondida, opcion_selecionada)
-
-		return redirect('resultado', pregunta_respondida.pk)
-
-	else:
-		pregunta = QuizUser.obtener_nuevas_preguntas()
-		if pregunta is not None:
-			QuizUser.crear_intentos(pregunta)
-
-		context = {
-			'pregunta':pregunta
-		}
-
-	return render(request, 'play/facil.html', context)
-
-def medio(request):
-
-	QuizUser, created = QuizUsuario.objects.get_or_create(usuario=request.user)
-
-	if request.method == 'POST':
-		pregunta_pk = request.POST.get('pregunta_pk')
-		pregunta_respondida = QuizUser.intentos.select_related('pregunta').get(pregunta__pk=pregunta_pk)
-		respuesta_pk = request.POST.get('respuesta_pk')
-
-		try:
-			opcion_selecionada = pregunta_respondida.pregunta.opciones.get(pk=respuesta_pk)
-		except ObjectDoesNotExist:
-			raise Http404
-
-		QuizUser.validar_intento(pregunta_respondida, opcion_selecionada)
-
-		return redirect('resultado', pregunta_respondida.pk)
-
-	else:
-		pregunta = QuizUser.obtener_nuevas_preguntas()
-		if pregunta is not None:
-			QuizUser.crear_intentos(pregunta)
-
-		context = {
-			'pregunta':pregunta
-		}
-
-	return render(request, 'play/medio.html', context)
-
-def dificil(request):
-
-	QuizUser, created = QuizUsuario.objects.get_or_create(usuario=request.user)
-
-	if request.method == 'POST':
-		pregunta_pk = request.POST.get('pregunta_pk')
-		pregunta_respondida = QuizUser.intentos.select_related('pregunta').get(pregunta__pk=pregunta_pk)
-		respuesta_pk = request.POST.get('respuesta_pk')
-
-		try:
-			opcion_selecionada = pregunta_respondida.pregunta.opciones.get(pk=respuesta_pk)
-		except ObjectDoesNotExist:
-			raise Http404
-
-		QuizUser.validar_intento(pregunta_respondida, opcion_selecionada)
-
-		return redirect('resultado', pregunta_respondida.pk)
-
-	else:
-		pregunta = QuizUser.obtener_nuevas_preguntas()
-		if pregunta is not None:
-			QuizUser.crear_intentos(pregunta)
-
-		context = {
-			'pregunta':pregunta
-		}
-
-	return render(request, 'play/dificil.html', context)
-
-
 
 def resultado_pregunta(request, pregunta_respondida_pk):
 	respondida = get_object_or_404(PreguntasRespondidas, pk=pregunta_respondida_pk)
+	nivel = respondida.pregunta.nivel
 
 	context = {
-		'respondida':respondida
+		'respondida':respondida,
+		'nivel':nivel
 	}
 	return render(request, 'play/resultados.html', context)
 

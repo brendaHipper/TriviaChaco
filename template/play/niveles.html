@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static %}
+<!-- {% load static %} -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -15,25 +15,29 @@
     <div class="main">
         <section>
             <h2>Menú Principal</h2>
-            <!-- Class "cbp-spmenu-open" gets applied to menu -->
-            <button href="#">Reglas del Juego</button>
-            <a href="{% url 'facil' %}">
+            <a href="{% url 'reglasJuego' %}">
+                <button class="btn-success">
+                    Reglas del Juego
+                </button>
+            </a>
+            <a href="/jugar/?nivel=FACIL">
                 <button class="btn-success">
                     Nivel Fácil
                 </button>
             </a>
-            <a href="{% url 'medio' %}">
+            <a href="/jugar/?nivel=MEDIO">
                 <button class="btn-success">
                     Nivel Medio
                 </button>
             </a>
-            <a href="{% url 'dificil' %}">
+            <a href="/jugar/?nivel=DIFICIL">
                 <button class="btn-success">
                     Nivel Díficil
                 </button>
             </a>
             <!-- <button href="#">Nivel Fácil</button> -->
         </section>
+        <img src= "{% static 'css/Carpi1.jpg' %}" width="200" height="200"/>
     </div>
 </body>
 </html>

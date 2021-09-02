@@ -1,73 +1,52 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-/* * {
-  box-sizing: border-box;
-}
-
+/* Fondo */
 body {
-  background-color: #e5e907;
-  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 100%);
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
+  background-color: #1DB062;
+  background-image: url(Carpi1.jpg);
 }
 
-.h3{
-  font-size: 20px;
+/* Caja del centro */
+#wrapper {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #94C9E9;
+  padding: 5%;
+  box-shadow: 1px 1px 7px -1px rgba(0, 0, 0, 0.59);
 }
 
-.label{
-  background-color: #e60953;
-  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 100%);
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
+/* Titulo */
+h1 {
+  font-family: 'Staatliches', cursive;
+  letter-spacing: 4px;
+  font-size: 2em;
+  color: #000;
+  text-align: center;
+  margin-bottom: 5%;
 }
 
-.container1 {
-  background-color: rgb(59, 18, 241);
-  border-radius: 10px;
-  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
-  width: 600px;
-  max-width: 95vw;
-  overflow: hidden;
-  position: relative;
-}
-
-.form-check{
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
-  width: 600px;
-  max-width: 95vw;
-  overflow: hidden;
-}
-
-.button {
-  background-color: #8e44ad;
-  color: #fff;
+/* Color de fondo del boton*/
+#btn, #start {
+  background-color: #FDC049;
+  color: #000;
+  padding: 15px;
   border: none;
-  display: block;
-  width: 100%;
   cursor: pointer;
-  font-size: 1.1rem;
-  font-family: inherit;
-  padding: 1.3rem;
-}
-
-.button:hover {
-  background-color: #732d91;
-}
-
-.button:focus {
+  width: 40%;
+  display: block;
+  margin: 0 auto;
   outline: none;
-  background-color: #5e3370;
-} */
+  font-family: 'Staatliches', cursive;
+  letter-spacing: 4px;
+  font-size: 1em; 
+  transition: 0.3s;
+}
+
+/* Efecto sobre el botón */
+#btn:hover, #start:hover {
+  background-color: #DB8E45;
+}

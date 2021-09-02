@@ -1,49 +1,56 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
-/* Color de fondo */
 body, html { 
     font-size: 100%; 	
     padding: 0; 
     margin: 0; 
-    background: #FDC049;
+    background: #94C9E9;
 }
 
-/* Titulo */
+h1{
+    color: #000;
+    font-family: 'Staatliches', cursive;
+}
+
+.img{
+	padding-right: 0%;
+	padding-top: 1%;
+}
+
 .main > section h2 {
-	font-weight: 1000;
+    font-family: 'Staatliches', cursive;
+	font-size: xx-large;
 	color: #000;
 }
 
-/* Ancho de los botones*/
 .main > section {
 	max-width: 260px;
 	width: 90%;
 	margin: 0 auto;
 }
 
-/* propiedades de los botones */
 .main > section button {
 	border: none;
-	background: #94C9E9;
+	background: #1DB062;
 	color: #000;
 	padding: 1.5em;
 	display: block;
 	width: 100%;
 	cursor: pointer;
 	margin: 10px 0;
-	font-size: 0.8em;
+	font-size: 1rem;
+    font-family: 'Staatliches', cursive;
 }
 
-/* Efectos de los botones */
 .main > section button:hover {
-	background: #0d77b6;
+	background: #FDC049;
 }
 
 .main > section button.active {
-	background: #0d77b6;
+	background: #FDC049;
 }
 
 .main > section button.disabled {
-	background: #0d77b6;
+	background: #FDC049;
 	pointer-events: none;
 }
