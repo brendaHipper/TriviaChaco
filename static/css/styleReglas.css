@@ -1,0 +1,59 @@
+h1,h2,ul.bullets {
+    color: #00bb2d;
+  }
+  
+  .header,h1,ul.bullets{
+    color: white;
+    background-color: white;
+    font-family: 'Staatliches', cursive;
+  }
+  
+  .col1,h1,ul.bullets{
+    color:#00bb2d;
+    font-family: 'Staatliches', cursive;
+  }
+  
+  body {
+    margin: 0px;
+    padding: 0px;
+    color: #000;
+    border-collapse: collapse;
+  }
+  
+  header {
+    padding: auto;
+    display: block;
+    background-color: white;
+    height: 50px;
+  }
+  
+  section {
+    display: block;
+    border: 30px solid white;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  
+  .col1,p{
+    text-align: left;
+    font-family: 'Staatliches', cursive;
+  }
+  
+  ul.bullets{
+    list-style-type: circle;
+  }
+  
+  #col1 {
+    padding-left: 2px;
+    width: 220px;
+    height: 900px;
+    font-family: 'Staatliches', cursive;
+  }
+  #col2 {
+    height: 900px;
+    font-family: 'Staatliches', cursive;
+  }
+  
+  #col1 {
+    float: left;
+  }

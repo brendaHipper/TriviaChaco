@@ -21,6 +21,29 @@
             Ver Aqui el Tablero
         </button>
     </a>
+    <!-- compartir-->
+    <button id="start" class="btn-success">
+    <a title="Compartir en Facebook" id="facebook-share-button-linuxito.com">Compartir en Facebook</a>
+        <script>
+        var facebookShareButton = document.getElementById('facebook-share-button-linuxito.com');
+        var facebookShareButtonHref='http://www.facebook.com/sharer/sharer.php?';
+        facebookShareButtonHref += 'u='+document.URL;
+        facebookShareButtonHref += '&title='+document.title;
+        facebookShareButton.href = facebookShareButtonHref;
+        </script>
+    </button>
+    <button id="start" class="btn-success">
+    <a title="Twittear" id="twitter-share-button-linuxito.com">Twittear</a>
+        <script>
+        var twitterShareButton = document.getElementById('twitter-share-button-linuxito.com');
+        var twitterShareButtonHref='https://twitter.com/share?';
+        twitterShareButtonHref += 'url='+document.URL;
+        twitterShareButtonHref += '&via=linuxitux';
+        twitterShareButtonHref += '&text='+document.title;
+        twitterShareButton.href = twitterShareButtonHref;
+    </script>
+    </button>
+    <!-- compartir-->
 </div>
 <!--Sentencia de else que chequea la respuesta introducida -->
 {% else %}
