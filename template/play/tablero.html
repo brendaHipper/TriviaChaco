@@ -5,10 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tablero</title>
+    <title>Chaqueñometro</title>
     <link rel="stylesheet" href="{% static 'css/styleTablero.css' %}">
+    <link rel="icon" href="{% static 'css/Carpi2.png' %}">
 </head>
 <body>
+    <header>
+        <nav class="menu">
+            <a href="#" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
+            <a href="#" class="">Ranking</a>
+            <a href="#" class="">Nosotros</a>
+            <a href="#" class="">Logout</a>
+            <a href="{% url 'login' %}" class="">Login</a>
+        </nav>
+      </header>  
     <h1>
         <span class="info">
             Los {{contar_user}} mejores jugadores

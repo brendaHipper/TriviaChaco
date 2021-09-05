@@ -5,27 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trivia Chaco</title>
+    <title>Chaqueñometro</title>
     <link rel="stylesheet" href="{% static 'css/styleInicio.css' %}">
-    <link rel="shortcut icon" href="{% static 'css/logo.jpg' %}">
-</head>
+    <link rel="icon" href="{% static 'css/Carpi2.png' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}"></head>
 <body>
-    <img src="{% static 'css/Carpi2.png' %}" width="340" height="200"/>
-    <section id="start-page">
-		<h1>CHAQUEÑOMETRO</h1>
-		<h2>Conoce tu provincia jugando!!</h2>
-        <a href="{% url 'login' %}">
-            <button class="btn-success">
-                Iniciar Sesión
-            </button>
-        </a>
-        <a href="{% url 'registro' %}">
-            <button class="btn-success">
-                Registrarse
-            </button>
-        </a>
-		<!-- <button>Iniciar Sesión</button>
-		<button>Registrarse</button> -->
-	</section>
+    <header>
+        <nav class="menu">
+            <a href="#" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
+            <a href="#" class="">Ranking</a>
+            <a href="#" class="">Nosotros</a>
+            <a href="#" class="">Logout</a>
+            <a href="{% url 'login' %}" class="">Login</a>
+        </nav>
+    </header>
+    <div class="grid_container">
+        <div class="grid_item"><img src="{% static 'css/Carpi1.jpg' %}" /></div>
+        <h1 class="grid_item">CHAQUEÑOMETRO</h1>
+        <h2 class="grid_item">Conoce tu provincia jugando!!</h2>
+        <div class="boton grid_item">
+            <a href="{% url 'login' %}">
+                <button class="btn-success">
+                    Iniciar Sesión
+                </button>
+            </a>
+            <a href="{% url 'registro' %}">
+                <button class="btn-success">
+                    Registrarse
+                </button>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
