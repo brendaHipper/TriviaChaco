@@ -5,39 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chaqueñometro</title>
+    <title>Registro</title>
     <!-- Customize CSS Stylesheet-->
     <link rel="stylesheet" href="{% static 'css/stylesRegistro.css' %}">
-    <link rel="icon" href="{% static 'css/Carpi2.png' %}">
 </head>
 <body>
-    <header>
-        <nav class="menu">
-            <a href="#" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
-            <a href="#" class="">Ranking</a>
-            <a href="#" class="">Nosotros</a>
-            <a href="#" class="">Logout</a>
-            <a href="{% url 'login' %}" class="">Login</a>
-        </nav>
-    </header>
-    <div class="grid_container">
-        <form method="POST">
-            {% csrf_token %}
-            <div class="login-page">
-                <h1>Comience a jugar!!!</h1>
-                <div class="form">
-                    <form class="login-page">
-                        {{form.as_p}}
-                        <div>
-                            <button type="submit">
-                                Enviar
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </form>
-    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="login-page">
+            <h1>Comience a jugar!!!</h1>
+            <div class="form">
+              <form class="login-page">
+                {{form.as_p}}
+                <button type="submit">
+                    Enviar
+                </button>
+              </form>
+          </div>
+        </div>
+    </form>
 </body>
 </html>
 

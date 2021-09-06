@@ -5,21 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chaqueñometro</title>
+    <title>Juego</title>
     <link rel="stylesheet" href="{% static 'css/styleJugar.css' %}">
-    <link rel="icon" href="{% static 'css/Carpi2.png' %}">
 </head>
 <body>
-    <header>
-        <nav class="menu">
-            <a href="#" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
-            <a href="#" class="user">Hola {{user}} !!!</a>
-            <a href="#" class="direcciones">Ranking</a>
-            <a href="#" class="direcciones">Nosotros</a>
-            <a href="#" class="direcciones">Logout</a>
-            <a href="{% url 'login' %}" class="direcciones">Login</a>
-        </nav>
-      </header>     
+    
 {% block contenido %}
 
 {% if pregunta is None %}
@@ -70,7 +60,7 @@
                 <input type="hidden" name="pregunta_pk" value="{{pregunta.pk}}">
 
             {% for opciones in pregunta.opciones.all %}
-            <h3 requi>
+            <h3>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="respuesta_pk" value="{{opciones.pk}}" id="choice-{{forloop.counter}}">
                 <label class="form-check-label" for="choice-{{forloop.counter}}">
