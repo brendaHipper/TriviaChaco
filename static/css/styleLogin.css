@@ -1,98 +1,136 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+*{
+	margin:0;
+    margin-top:0;
+}
+.menu{  
+    background-color: #906c54;
+    overflow: hidden;  
+    padding: 0px;
+    position: sticky;
+}
+.menu a{
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    box-sizing: border-box;
+    font-weight:1000;
+}  
+.menu a:hover{
+    background-color:#fffeff;
+    color: #906c54;
+	  cursor: pointer;
+}
+.menu a.active{
+    float: left;
+    background-color: #fffeff;
+    color: #ad6648;
+    padding: 20px 50px;
+    position: relative;
+    left: 15px;
+    font-weight:1000
+}   
 
+.caprincho {
+    width: 70px;
+    float: inherit;
+    position: absolute;
+    top: 10px;
+    left: -10px ;
+}
 body {
-  background: #1DB062;
+	background-image: url("https://www.wowpatterns.com/assets/files/resource_images/cotton-flowers-pattern.jpg");	
+	background-color: rgb(77, 224, 101);
+	text-align: center;
+	padding-top: 0pc;
 }
-
-/* body{
-background-image: url('css/GIF - Bandera sin capa negra.gif');
+.grid_container{
+	display:grid;
+	max-width: 50%;
+	height: 350px;
+	margin:auto;
+	border-radius: 9%;
+	border: #767676 solid 2px;
+	background-color: #fffeff;
+	grid-template-rows: 1fr ;
+	grid-template-columns: 1fr ;
+	object-fit:contain;
+	margin-top: 2em;
 }
- */
-
 h1 {
     display: block;
     font-size: 2em;
-    margin-top: 0.5em;
-    margin-bottom: 0.67em;
-    margin-left: 0;
-    margin-right: 0;
+    margin:25px auto;
     font-weight: bold;
 }
-
 .login-page {
-  width: 360px;
-  padding: 1% 0 0;
-  margin: auto;
+	width: auto;
+	padding: 1% 0 0;
+	margin: auto;
 }
 .form {
-  position: relative;
-  z-index: 1;
-  background: #FDC049;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 2px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	background: #906c54;
+	max-width: 500px;
+	margin: 0 auto 100px;
+	padding: 2px;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 95%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+	background: #f2f2f2;
+	width: 95%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+form input:focus{
+	background-color:#c4b399
 }
 form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #4CAF50;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #962e2e;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #c4b399;
+	width: -webkit-fill-available;
+	border: 0;
+	padding: 15px;
+	color: #f2f2f2;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+	display:block;
+	margin:auto 10px 10px;
 }
 form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+	background: #fffffd;
+	color:#906c54
 }
 form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
-  font-size: 12px;
+	margin: 15px 0 0;
+	color: #b3b3b3;
+	font-size: 12px;
 }
 form .message a {
-  color: #4CAF50;
-  text-decoration: none;
+	color: #4CAF50;
+	text-decoration: none;
 }
 form .register-form {
-  display: none;
+    display: none;
 }
-container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
+ul {
+  list-style-type: none;
 }
-container:before, .container:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-container .info {
-  margin: 50px auto;
-  text-align: center;
-}
-container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
+.errorlist{
+padding: 5px;
+margin: 0.5em 0.8em ;
+background-color:#c4b399;
 }
