@@ -54,24 +54,22 @@ body {
 	background-image: url("https://www.wowpatterns.com/assets/files/resource_images/cotton-flowers-pattern.jpg");	
 	background-color: rgb(77, 224, 101);
 	text-align: center;
-	padding-top: 0pc;
+	padding-top: 0px;
 }
 
 
-.h1{
-	padding: 2%;
+h1{
+	margin: 0.5em auto;
+	border: #767676 solid 2px;
+	background-color: #fffeff;
+    max-width: 50%;
 	text-align: center;
 	font-family: 'Staatliches', cursive;
-	color: #000;
 }
 
 .span.info {
 	font-family: 'Staatliches', cursive;
 	color: #000;
-}
-
-body {
-	background-color: #1DB062;
 }
 
 #main-container img{
@@ -97,7 +95,7 @@ th, td {
 }
 
 thead {
-	background-color: #FDC049;
+	background-color: #df9b62;
 	border-bottom: solid 5px #000;
 	color: #000;
 	font-family: 'Staatliches', cursive;
