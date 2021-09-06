@@ -12,6 +12,26 @@ h1,h2,ul.bullets {
     color:#00bb2d;
     font-family: 'Staatliches', cursive;
   }
+
+  button{
+    background-color: #2b2b2b;
+    font-family: 'Staatliches', cursive;
+    font-size: 1.25em;
+    font-weight: 400;
+    text-transform: uppercase;
+    border: 2px solid #FFF;
+    border-radius: 4px;
+    padding: 12px 44px 12px 44px;
+    color: #FFF;
+    -webkit-transition: color 0.5s, background-color 0.5s;
+    transition: color 0.5s, background-color 0.5s;
+    cursor: pointer;
+  }
+  
+  button:hover{
+    background-color: #FFF;
+    color: #2b2b2b;
+  }
   
   body {
     margin: 0px;
