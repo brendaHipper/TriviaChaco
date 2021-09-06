@@ -13,15 +13,13 @@
     <header>
         <nav class="menu">
             <a href="#" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
-            <a href="#" class="">Ranking</a>
-            <a href="#" class="">Nosotros</a>
-            <a href="#" class="">Logout</a>
-            <a href="{% url 'login' %}" class="">Login</a>
+            <a href="#" class="user">Hola {{user}} !!!</a>
+            <a href="#" class="direcciones">Ranking</a>
+            <a href="#" class="direcciones">Nosotros</a>
+            <a href="#" class="direcciones">Logout</a>
+            <a href="{% url 'login' %}" class="direcciones">Login</a>
         </nav>
     </header>
-    <h1>
-        Hola {{user}} !!!
-    </h1>
     <div class="main">
         <section>
             <h2>Menú Principal</h2>

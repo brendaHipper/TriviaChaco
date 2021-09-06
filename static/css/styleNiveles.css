@@ -20,7 +20,7 @@
     box-sizing: border-box;
     font-weight:1000;
 }  
-.menu a:hover{
+.direcciones:hover{
     background-color:#fffeff;
     color: #906c54;
 	cursor: pointer;
@@ -33,6 +33,15 @@
     position: relative;
     left: 15px;
     font-weight:1000
+}   
+.menu a.user{
+    float: left;
+    color: #fffeff;
+    padding: 20px 50px;
+    position: relative;
+    left: 15px;
+    font-weight:1000;
+    margin:0 10px
 }   
 
 .caprincho {
@@ -49,12 +58,8 @@ body {
 	padding-top: 0pc;
 }
 
-h1{
-    color: #000;
-    font-family: 'Staatliches', cursive;
-}
 
-.img{
+.main img{
 	padding-right: 0%;
 	padding-top: 1%;
 }

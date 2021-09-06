@@ -91,6 +91,9 @@ form input {
 	box-sizing: border-box;
 	font-size: 14px;
 }
+form input:focus{
+	background-color:#c4b399
+}
 form button {
 	font-family: "Roboto", sans-serif;
 	text-transform: uppercase;
@@ -122,4 +125,12 @@ form .message a {
 }
 form .register-form {
     display: none;
+}
+ul {
+  list-style-type: none;
+}
+.errorlist{
+padding: 5px;
+margin: 0.5em 0.8em ;
+background-color:#c4b399;
 }

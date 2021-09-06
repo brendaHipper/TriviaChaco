@@ -73,20 +73,22 @@ body {
 .form {
 	background: #906c54;
 	max-width: 500px;
-	margin: 0 auto 100px;
-	padding: 2px;
+	margin: 10px auto 100px;
+	padding: 10px 2px 2px 2px;
 	text-align: center;
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 h1 {
   display: block;
-  font-size: 2em;
+  font-size: 2.4em;
   margin: 25px auto;
   font-weight: bold;
   text-align: center;
 }
-
+label{
+	font-size: 1.3em;
+}
 /*Propiedades caja de texto dentro del formulario. Campos del formulario*/
 form input {
 	font-family: "Roboto", sans-serif;
@@ -98,6 +100,9 @@ form input {
 	padding: 15px;
 	box-sizing: border-box;
 	font-size: 14px;
+}
+form input:focus{
+	background-color:#c4b399
 }
 /* Propiedades del Botón*/
 form button {
