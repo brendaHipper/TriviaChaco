@@ -30,7 +30,11 @@ class Pregunta(models.Model):
 	nivel = models.CharField(max_length=50,choices=NIVELES,default='')
 	# Redefino string
 	def __str__(self):
-		return self.texto 
+		return self.texto
+	
+	# Clase que brinda las opciones para la pregunta
+	def my_ask(self):
+		return PreguntasRespondidas.objects.filter(pregunta=self).values('correcta', 'respuesta_id', 'pregunta_id')
 
 # Clase que brinda las opciones para la pregunta
 class ElegirRespuesta(models.Model):
@@ -50,6 +54,10 @@ class ElegirRespuesta(models.Model):
 class QuizUsuario(models.Model):
 	usuario = models.OneToOneField(User, on_delete=models.CASCADE)
 	puntaje_total = models.DecimalField(verbose_name='Puntaje Total', default=0, decimal_places=2, max_digits=10)
+
+	# Se redefine string para que muestre los objetos usuario por su nombre
+	def __str__(self):
+		return self.usuario
 
 	# Método para obtener los intentos.
 	def crear_intentos(self, pregunta):

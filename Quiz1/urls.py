@@ -12,6 +12,7 @@ from .views import (
             reglasJuego, 
             jugar,
             resultado_pregunta,
+            estadisticas,
             tablero)
 
 # va contener una lista de urls o rutas. Crea las urls
@@ -25,4 +26,5 @@ urlpatterns = [
     path('tablero/',tablero, name='tablero'),
     path('jugar/',jugar, name='jugar'),
     path('resultado_pregunta/<int:pregunta_respondida_pk>/',resultado_pregunta, name='resultado'),
+    path('estadisticas/', estadisticas, name='estadisticas'),
 ]
