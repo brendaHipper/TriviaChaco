@@ -5,17 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chaqueñometro</title>
     <link rel="stylesheet" href="{% static 'css/styleReglas.css' %}">
+    <link rel="icon" href="{% static 'css/Carpi2.png' %}">
 </head>
 <body>
-    <header>
+  <header>
+    <nav class="menu">
+      <a href="#" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
+      <a href="#" class="user">Hola {{user}} !!!</a>
+      <a href="#" class="direcciones">Ranking</a>
+      <a href="#" class="direcciones">Nosotros</a>
+      <a href="#" class="direcciones">Logout</a>
+      <a href="{% url 'login' %}" class="direcciones">Login</a>
+  </nav>
+  </header>  
+    <div class="fondo_reglas">
+      <header class="regla">
         <h1>Reglas del Juego!</h1>
       </header>
+<<<<<<< HEAD
       <section id="col1">
         <h1>CHAQUEÑOMETRO</h1>
         <img src="{% static 'css/Carpi1.jpg' %}" width="200" height="200"/>
         <h2>Demostrá cuánto conocés de tu provincia jugando!!!</h2>
+        <a href="{% url 'niveles' %}">
+          <button id="jugar">
+              Jugar
+          </button>
+        </a>
       </section>
       <section id="col2">
         <h1>Objetivo del juego</h1>
@@ -32,5 +50,31 @@
         <h1>Acerca del Proyecto</h1>
         <p>Este juego fue desarrollado por el grupo nro 5 como parte del programa del Gobierno del Chaco, llamado Informatorio.</p>
       </section>
+=======
+      <div class="grid_container">
+        <section id="col1">
+          <h1>CHAQUEÑOMETRO</h1>
+          <img src="{% static 'css/Carpi1.jpg' %}" width="200" height="200"/>
+          <h2>Demostrá cuánto conocés de tu provincia jugando!!!</h2>
+        </section>
+        <section id="col2">
+          <h1>Objetivo del juego</h1>
+          <p>Responder correctamente el máximo número de preguntas acerca de la provincia del Chaco en 
+            el contexto del aniversario número 70 de su provincialización.</p>
+          <h1>¿Cómo Jugar?</h1>
+          <ol class="bullets">
+            <li>Una vez iniciada tu sesión podrás elegir el nivel de dificultad del juego.</li>
+            <li>Cada nivel consta de 10 preguntas de distintas categorías: Historia, Geografía, Educación, Economía, Cultura y Deporte.</li>
+            <li>Cada respuesta correcta del nivel fácil te sumará 3 puntos.</li>
+            <li>Cada respuesta correcta del nivel medio te sumará 5 puntos.</li>
+            <li>Cada respuesta correcta del nivel difícil te sumará 8 puntos.</li>
+            <li>Una vez finalizada la partida podrás acceder al ranking y ver en qué posición quedaste.</li>
+          </ol>
+          <h1>Acerca del Proyecto</h1>
+          <p>Este juego fue desarrollado por el grupo nro 5 como parte del programa del Gobierno del Chaco, llamado Informatorio.</p>
+        </section>
+      </div>
+    </div>
+>>>>>>> c872b7a3533079d592da25992dd751a043efc841
 </body>
 </html>

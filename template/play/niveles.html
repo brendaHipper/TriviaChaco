@@ -5,15 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principal</title>
+    <title>Chaqueñometro</title>
     <link rel="stylesheet" href="{% static 'css/styleNiveles.css' %}">
+    <link rel="icon" href="{% static 'css/Carpi2.png' %}">
 </head>
 <body>
-    <h1>
-        Hola {{user}} !!!
-    </h1>
+    <header>
+        <nav class="menu">
+            <a href="#" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
+            <a href="#" class="user">Hola {{user}} !!!</a>
+            <a href="#" class="direcciones">Ranking</a>
+            <a href="#" class="direcciones">Nosotros</a>
+            <a href="#" class="direcciones">Logout</a>
+            <a href="{% url 'login' %}" class="direcciones">Login</a>
+        </nav>
+    </header>
     <div class="main">
-        <section>
+        <img src= "{% static 'css/Carpi1.jpg' %}" width="200" height="200"/>
+        <section class="grid_container">
             <h2>Menú Principal</h2>
             <a href="{% url 'reglasJuego' %}">
                 <button class="btn-success">
@@ -37,7 +46,6 @@
             </a>
             <!-- <button href="#">Nivel Fácil</button> -->
         </section>
-        <img src= "{% static 'css/Carpi1.jpg' %}" width="200" height="200"/>
     </div>
 </body>
 </html>
