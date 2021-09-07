@@ -109,3 +109,26 @@ tr:hover td{
 	background-color: rgb(114, 250, 143);
 	color: white;
 }
+.botones_finales a{
+    text-decoration:none;
+}
+.botones_finales button {
+font-family: "Roboto", sans-serif;
+text-transform: uppercase;
+outline: 0;
+background: #c4b399;
+width: -webkit-fill-available;
+border: 0;
+padding: 15px;
+color: #f2f2f2;
+font-size: 14px;
+-webkit-transition: all 0.3 ease;
+transition: all 0.3 ease;
+cursor: pointer;
+display:block;
+margin:auto 10px 10px;
+}
+.botones_finales button:hover{
+background: #fffffd;
+color:#906c54
+}

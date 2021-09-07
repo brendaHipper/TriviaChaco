@@ -12,79 +12,84 @@
 <body>
     <header>
         <nav class="menu">
-            <a href="/inicio/" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
+            <a href="/logout_vista/" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
             <a href="#" class="user">Hola {{user}} !!!</a>
             <a href="/tablero/" class="">Ranking</a>
-            <a href="#" class="">Logout</a>
-            <a href="{% url 'login' %}" class="">Login</a>
+            <a href="/logout_vista/" class="">Cerrar Sesion</a>
         </nav>
-      </header>     
-{% block contenido %}
+    </header>     
+    {% block contenido %}
 
-{% if pregunta is None %}
+    {% if pregunta is None %}
 
-<div id="wrapper">
-    <h1>Finalizaste el Juego!! Tu puntaje es {{puntajeTotal}}</h1>
-    <a href="{% url 'tablero' %}">
-        <button id="start" class="btn-success">
-            Ver Aqui el Tablero
-        </button>
-    </a>
-    <!-- compartir-->
-    <button id="start" class="btn-success">
-    <a title="Compartir en Facebook" id="facebook-share-button-linuxito.com">Compartir en Facebook</a>
-        <script>
-        var facebookShareButton = document.getElementById('facebook-share-button-linuxito.com');
-        var facebookShareButtonHref='http://www.facebook.com/sharer/sharer.php?';
-        facebookShareButtonHref += 'u='+document.URL;
-        facebookShareButtonHref += '&title='+document.title;
-        facebookShareButton.href = facebookShareButtonHref;
-        </script>
-    </button>
-    <button id="start" class="btn-success">
-    <a title="Twittear" id="twitter-share-button-linuxito.com">Twittear</a>
-        <script>
-        var twitterShareButton = document.getElementById('twitter-share-button-linuxito.com');
-        var twitterShareButtonHref='https://twitter.com/share?';
-        twitterShareButtonHref += 'url='+document.URL;
-        twitterShareButtonHref += '&via=linuxitux';
-        twitterShareButtonHref += '&text='+document.title;
-        twitterShareButton.href = twitterShareButtonHref;
-    </script>
-    </button>
-    <!-- compartir-->
-</div>
-<!--Sentencia de else que chequea la respuesta introducida -->
-{% else %}
-<div id="wrapper">
-    <h1>
+    <div id="wrapper">
+        <h1>Finalizaste el Juego!! Tu puntaje es {{puntajeTotal}}</h1>
+        <div class="botones_finales">
+            <a href="{% url 'tablero' %}">
+                <button id="start" class="btn-success" >
+                    Ver Aqui el Tablero
+                </button>
+            </a>
+            <a href="/niveles/">
+                <button id="start" class="btn-success">
+                    Volver a Jugar
+                </button>
+            </a>
+            <!-- compartir-->
+            <button id="start" class="btn-success">
+                <a title="Compartir en Facebook" id="facebook-share-button-linuxito.com">Compartir en Facebook</a>
+                <script>
+                    var facebookShareButton = document.getElementById('facebook-share-button-linuxito.com');
+                    var facebookShareButtonHref='http://www.facebook.com/sharer/sharer.php?';
+                    facebookShareButtonHref += 'u='+document.URL;
+                    facebookShareButtonHref += '&title='+document.title;
+                    facebookShareButton.href = facebookShareButtonHref;
+                </script>
+            </button>
+            <button id="start" class="btn-success">
+                <a title="Twittear" id="twitter-share-button-linuxito.com">Twittear</a>
+                <script>
+                    var twitterShareButton = document.getElementById('twitter-share-button-linuxito.com');
+                    var twitterShareButtonHref='https://twitter.com/share?';
+                    twitterShareButtonHref += 'url='+document.URL;
+                    twitterShareButtonHref += '&via=linuxitux';
+                    twitterShareButtonHref += '&text='+document.title;
+                    twitterShareButton.href = twitterShareButtonHref;
+                </script>
+            </button>
+            <!-- compartir-->
+        </div>
+    </div>
+    <!--Sentencia de else que chequea la respuesta introducida -->
+    {% else %}
+    <div id="wrapper">
+        <h1>
         {{pregunta.categoria}}
-    </h1>
-    <h2>
+        </h1>
+        <h2>
         {{pregunta.texto}}
-    </h2>
+        </h2>
         <form method="POST" class="form">
             {% csrf_token %}
             <div class="quiz-container" id="quiz">
                 <input type="hidden" name="pregunta_pk" value="{{pregunta.pk}}">
-
-            {% for opciones in pregunta.opciones.all %}
-            <h3 requi>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="respuesta_pk" value="{{opciones.pk}}" id="choice-{{forloop.counter}}">
-                <label class="form-check-label" for="choice-{{forloop.counter}}">
-                    {{opciones.texto}}
-                </label>
+                {% for opciones in pregunta.opciones.all %}
+                <h3 requi>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="respuesta_pk" value="{{opciones.pk}}" id="choice-{{forloop.counter}}">
+                        <label class="form-check-label" for="choice-{{forloop.counter}}">
+                            {{opciones.texto}}
+                        </label>
+                    </div>
+                </h3>
+                {% endfor %}
+                <button id="start" type="submit" class="btn btn-success">
+                    Enviar
+                </button>
             </div>
-            </h3>
-            {% endfor %}
-            <button id="start" type="submit" class="btn btn-success">
-                Enviar
-            </button>
         </form>
     </div>
-</div>
-{% endif %}
-{% endblock %}
+    {% endif %}
+    {% endblock %}
 </body>
 </html>
