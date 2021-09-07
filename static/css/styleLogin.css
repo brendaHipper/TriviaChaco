@@ -63,7 +63,6 @@ body {
 }
 h1 {
     display: block;
-    font-family: 'Staatliches', cursive;
     font-size: 2em;
     margin:25px auto;
     font-weight: bold;
@@ -74,40 +73,6 @@ h1 {
 	margin: auto;
 }
 .form {
-  font-family: 'Staatliches', cursive;
-  position: relative;
-  z-index: 1;
-  background: #FDC049;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 2px;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-form input {
-  font-family: 'Staatliches', cursive;
-  outline: 0;
-  background: #f2f2f2;
-  width: 95%;
-  border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-form button {
-  font-family: 'Staatliches', cursive;
-  text-transform: uppercase;
-  outline: 0;
-  background: #4CAF50;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #fff;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
 	background: #906c54;
 	max-width: 500px;
 	margin: 0 auto 100px;
@@ -159,30 +124,7 @@ form .message a {
 	text-decoration: none;
 }
 form .register-form {
-  display: none;
-}
-container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
-}
-container:before, .container:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-container .info {
-  margin: 50px auto;
-  text-align: center;
-}
-container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #000;
-  display: none;
+    display: none;
 }
 ul {
   list-style-type: none;
