@@ -30,7 +30,11 @@ class Pregunta(models.Model):
 	nivel = models.CharField(max_length=50,choices=NIVELES,default='')
 	# Redefino string
 	def __str__(self):
-		return self.texto 
+		return self.texto
+	
+	# Clase que brinda las opciones para la pregunta
+	def my_ask(self):
+		return PreguntasRespondidas.objects.filter(pregunta=self).values('correcta', 'respuesta_id', 'pregunta_id')
 
 # Clase que brinda las opciones para la pregunta
 class ElegirRespuesta(models.Model):
