@@ -12,11 +12,10 @@
 <body>
     <header>
         <nav class="menu">
-            <a href="/inicio/" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
+            <a href="/logout_vista/" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
             <a href="#" class="user">Hola {{user}} !!!</a>
-            <a href="/tablero/" class="">Ranking</a>
-            <a href="#" class="">Logout</a>
-            <a href="{% url 'login' %}" class="">Login</a>
+            <a href="/tablero/" class="direcciones">Ranking</a>
+            <a href="/logout_vista/" class="direcciones">Cerrar Sesion</a>
         </nav>
       </header>  
     <h1>
@@ -44,8 +43,12 @@
             {% endfor %}
         </tbody>
     </table>
-    <div class="retry">
-        <a href="/niveles/">Volver a Jugar</a>
+    <div class="botones_finales">
+        <a href="/niveles/">
+            <button id="start" class="btn-success">
+                Volver a Jugar
+            </button>
+        </a>
     </div>
     <img src="{% static 'css/Carpi3.jpg' %}" width="340" height="200"/>
 </div>

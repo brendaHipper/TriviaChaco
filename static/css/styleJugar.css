@@ -128,3 +128,40 @@ h1 {
 	background: #fffffd;
 	color:#906c54
 }
+.botones_finales{
+		display:grid;
+		grid-template-columns:1fr 1fr
+}
+.botones_finales a{
+		text-decoration:none;
+}
+.botones_finales button {
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #c4b399;
+	width: -webkit-fill-available;
+	border: 0;
+	padding: 15px;
+	color: #f2f2f2;
+	font-size: 20px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+	display:block;
+	margin:auto 10px 10px;
+}
+i{
+	width:12%
+}
+.botones_finales button:hover{
+	background: #906c54;
+	color:#ffffff
+}
+.facebook{
+    background-color:#0000ffd6 !important
+}
+.twitter{
+	background-color:#005affd6 !important
+}
+
