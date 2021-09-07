@@ -12,11 +12,10 @@
 <body>
     <header>
         <nav class="menu">
-            <a href="/inicio/" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
+            <a href="/logout_vista/" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
             <a href="#" class="user">Hola {{user}} !!!</a>
-            <a href="/tablero/" class="">Ranking</a>
-            <a href="#" class="">Logout</a>
-            <a href="{% url 'login' %}" class="">Login</a>
+            <a href="/tablero/" class="direcciones">Ranking</a>
+            <a href="/logout_vista/" class="direcciones">Cerrar Sesion</a>
         </nav>
       </header>  
 {% block contenido %}

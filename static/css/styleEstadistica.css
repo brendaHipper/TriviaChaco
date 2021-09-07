@@ -58,82 +58,68 @@ body {
 	padding-top: 0pc;
 }
 
-
-.grid_container{
+.row{
+    background-color: #8b0000;
+    position: absolute;
+    margin:auto;
+    width: 100%;
+    height: 100%;
+}
+.estadistica{
 	display:grid;
 	max-width: 50%;
-	height:90%;
+	height: 50%;
 	margin:auto;
 	border-radius: 9%;
 	border: #767676 solid 2px;
 	background-color: #fffeff;
-	grid-template-rows: 1fr ;
-	grid-template-columns: 1fr ;
 	object-fit:contain;
 	margin-top: 2em;
 }
-/* Propiedades con respecto al Tamaño formulario de Registro*/
-.login-page {
-  width: auto;
-  padding: 1% 0 0 ;
-  margin: auto;
+.estadistica{
+	display:grid;
+	max-width: 50%;
+	height: 50%;
+	margin:auto;
+	border-radius: 9%;
+	border: #767676 solid 2px;
+	background-color: #fffeff;
+	object-fit:contain;
+	margin-top: 2em;
+	padding:15px;
 }
-
-/* Propiedades del formulario.*/
-/*padding en % para cambiar el tamaño a todos los lados*/
-.form {
-	background: #906c54;
-	max-width: 500px;
-	margin: 10px auto 100px;
-	padding: 10px 2px 2px 2px;
-	text-align: center;
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+.estadistica h1{
+	padding: 20px
 }
-
-h1 {
-  display: block;
-  font-size: 2.4em;
-  margin: 25px auto;
-  font-weight: bold;
-  text-align: center;
+.estadistica h3{
+	padding:0.5em;
+	color: green
 }
-label{
-	font-size: 1.3em;
+h3 i{
+	color:darkred
 }
-/*Propiedades caja de texto dentro del formulario. Campos del formulario*/
-form input {
-	font-family: "Roboto", sans-serif;
-	outline: 0;
-	background: #f2f2f2;
-	width: 95%;
-	border: 0;
-	margin: 5px 0 5px;
-	padding: 15px;
-	box-sizing: border-box;
-	font-size: 14px;
+.botones_finales a{
+    text-decoration:none;
 }
-form input:focus{
-	background-color:#c4b399
-}
-/* Propiedades del Botón*/
-form button {
+button {
 	font-family: "Roboto", sans-serif;
 	text-transform: uppercase;
 	outline: 0;
-	background: #c4b399;
+	background: #df9b62;
+	color:#fffeff;
 	width: -webkit-fill-available;
 	border: 0;
 	padding: 15px;
-	color: #f2f2f2;
 	font-size: 14px;
 	-webkit-transition: all 0.3 ease;
 	transition: all 0.3 ease;
 	cursor: pointer;
 	display:block;
-	margin:auto 10px 10px;
+	margin:auto;
+	font-weight:1000
+}
+button:hover{
+	background: #906c54;
+	color: #f2f2f2;
 }
 
-button:hover,.form button:active,.form button:focus {
-	background: #fffffd;
-	color:#906c54
-}

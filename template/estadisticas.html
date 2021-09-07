@@ -1,17 +1,45 @@
-{% extends 'base.html' %}
-
-{% block content %}
-    {% if user.is_superuser %}
-
-    <h1 style="color: #000;background-color: #94C9E9"> Hola {{ user.username }}</h1>
-    <h3>Pregunta que mas veces fue correctamente contestada: {{ question }}</h3>
-    <h3>Nivel al que se accedio mayor numero de veces: {{ max_level }}</h3>
-    <h3>Total de usuarios participantes: {{ total_usr }}</h3>
-    {% else %}
-        <div class="row" style="background-color: darkred;" align="center">
-                <h2 style="color: white;font-size: xxx-large">¡ATENCION!</h2>
-                <h2 style="color: white"> No se puede mostrar esta información confindecial porque no es administrador.</h2>
-        </div>
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaqueñometro</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/styleEstadistica.css' %}">
+  <link rel="icon" href="{% static 'css/Carpi2.png' %}">
+</head>
+<body>
+  <header>
+    <nav class="menu">
+      <a href="/logout_vista/" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
+      <a href="#" class="user">Hola {{user}} !!!</a>
+      <a href="/tablero/" class="direcciones">Ranking</a>
+      <a href="/logout_vista/" class="direcciones">Cerrar Sesion</a>
+    </nav>
+  </header>
+  {% block content %}
+  {% if user.is_superuser %}
+  <div class="estadistica">
+    <h1 >Estadisticas</h1>
+    <h3>Pregunta que mas veces fue correctamente contestada: <br><i>{{ question }}</i></h3>
+    <h3>Nivel al que se accedio mayor numero de veces: <br><i>{{ max_level }}</i></h3>
+    <h3>Total de usuarios participantes:<br> <i>{{ total_usr }}</i></h3>
+    <div class="botones_finales">
+      <a href="/niveles/">
+          <button id="start" class="btn-success">
+              Volver
+          </button>
+      </a>
+    </div>
+  </div>
+  {% else %}
+  <div class="row" style="background-color: darkred;" align="center">
+          <h1 style="color: white;font-size: xxx-large" class="peligro"> <i class="fas fa-exclamation-triangle"></i> WARNING!</h1>
+          <h2 style="color: white"> Acceso Denegado</h2>
+  </div>
   {% endif %}
-
-{% endblock %}
+  {% endblock %}
+</body>
+</html>

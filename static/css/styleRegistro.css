@@ -1,70 +1,70 @@
 
 body {
-    background: #94C9E9;
-  }
-  
-  h1 {
-      font-family: 'Staatliches', cursive;
-      display: block;
-      font-size: 25px;
-      margin-top: 0.90em;
-      margin-bottom: 0.20em;
-      margin-left: 0;
-      margin-right: 0;
-      font-weight: bold;
-  }
-  
-  /* Propiedades con respecto al Tamaño formulario de Registro*/
-  .login-page {
-      width: 400px;
-      padding: 15;
-      margin: auto;
-      font-family: 'Staatliches', cursive;
-    }
-  
-  /* Propiedades del formulario.*/
-  /*padding en % para cambiar el tamaño a todos los lados*/
-  .form {
-    position: relative;
-    background: #DB8E45;
-    margin: 30px auto 20px;
-    padding: 3%;
-    text-align: center;
+  background: #94C9E9;
+}
+
+h1 {
+    font-family: 'Staatliches', cursive;
+    display: block;
+    font-size: 25px;
+    margin-top: 0.90em;
+    margin-bottom: 0.20em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+/* Propiedades con respecto al Tamaño formulario de Registro*/
+.login-page {
     width: 400px;
-    height: 450px;
+    padding: 15;
+    margin: auto;
+    font-family: 'Staatliches', cursive;
   }
-  
-  
-  /*Propiedades caja de texto dentro del formulario. Campos del formulario*/
-  input {
-      font-family: 'Staatliches', cursive;
-      outline: 0;
-      background: #f2f2f2;
-      width: 90%;
-      border-radius: 10;
-      margin: 0 0 5px;
-      padding: 10px;
-      box-sizing: border-box;
-      font-size: 15px;
-    }
-  
-  /* Propiedades del Botón*/
-  button {
-      font-family: 'Staatliches', cursive;
-      text-transform: uppercase;
-      outline: 0;
-      background: #accfae;
-      width: 20%;
-      border: 0;
-      padding: 3px;
-      border: solid #000;
-      color: #000;
-      font-size: 16px;
-      -webkit-transition: all 0.3 ease;
-      transition: all 0.3 ease;
-      cursor: pointer;
-    }
-  
-    button:hover,.form button:active,.form button:focus {
-      background: #1DB062;
-    }
+
+/* Propiedades del formulario.*/
+/*padding en % para cambiar el tamaño a todos los lados*/
+.form {
+  position: relative;
+  background: #DB8E45;
+  margin: 30px auto 20px;
+  padding: 3%;
+  text-align: center;
+  width: 400px;
+  height: 450px;
+}
+
+
+/*Propiedades caja de texto dentro del formulario. Campos del formulario*/
+input {
+    font-family: 'Staatliches', cursive;
+    outline: 0;
+    background: #f2f2f2;
+    width: 90%;
+    border-radius: 10;
+    margin: 0 0 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+  }
+
+/* Propiedades del Botón*/
+button {
+    font-family: 'Staatliches', cursive;
+    text-transform: uppercase;
+    outline: 0;
+    background: #accfae;
+    width: 20%;
+    border: 0;
+    padding: 3px;
+    border: solid #000;
+    color: #000;
+    font-size: 16px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+
+  button:hover,.form button:active,.form button:focus {
+    background: #1DB062;
+  }
