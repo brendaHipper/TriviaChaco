@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chaqueñometro</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styleJugar.css' %}">
     <link rel="icon" href="{% static 'css/Carpi2.png' %}">
 </head>
@@ -14,8 +15,8 @@
         <nav class="menu">
             <a href="/logout_vista/" class="active"> <img src="{% static 'css/Carpi2.png' %}" class="caprincho"/>Inicio</a>
             <a href="#" class="user">Hola {{user}} !!!</a>
-            <a href="/tablero/" class="">Ranking</a>
-            <a href="/logout_vista/" class="">Cerrar Sesion</a>
+            <a href="/tablero/" class="direcciones">Ranking</a>
+            <a href="/logout_vista/" class="direcciones">Cerrar Sesion</a>
         </nav>
     </header>     
     {% block contenido %}
@@ -25,19 +26,20 @@
     <div id="wrapper">
         <h1>Finalizaste el Juego!! Tu puntaje es {{puntajeTotal}}</h1>
         <div class="botones_finales">
-            <a href="{% url 'tablero' %}">
-                <button id="start" class="btn-success" >
+            <a href="{% url 'tablero' %}"> 
+                <button id="start" class="btn-success" > 
                     Ver Aqui el Tablero
                 </button>
             </a>
-            <a href="/niveles/">
-                <button id="start" class="btn-success">
-                    Volver a Jugar
+            <a href="/niveles/"> 
+                <button id="start" class="btn-success">             
+                    Volver a Jugar  
                 </button>
             </a>
-            <!-- compartir-->
-            <button id="start" class="btn-success">
-                <a title="Compartir en Facebook" id="facebook-share-button-linuxito.com">Compartir en Facebook</a>
+                <!-- compartir-->
+            <a title="Compartir en Facebook" id="facebook-share-button-linuxito.com" target="_blank">
+                <button id="start" class="btn-success facebook">
+                    <i class="fab fa-facebook"></i>Compartir en Facebook
                 <script>
                     var facebookShareButton = document.getElementById('facebook-share-button-linuxito.com');
                     var facebookShareButtonHref='http://www.facebook.com/sharer/sharer.php?';
@@ -45,9 +47,11 @@
                     facebookShareButtonHref += '&title='+document.title;
                     facebookShareButton.href = facebookShareButtonHref;
                 </script>
-            </button>
-            <button id="start" class="btn-success">
-                <a title="Twittear" id="twitter-share-button-linuxito.com">Twittear</a>
+                </button>
+            </a>
+            <a title="Twittear" id="twitter-share-button-linuxito.com" target="_blank">
+                <button id="start" class="btn-success twitter">
+                    <i class="fab fa-twitter-square"></i>Compartir en Twitter
                 <script>
                     var twitterShareButton = document.getElementById('twitter-share-button-linuxito.com');
                     var twitterShareButtonHref='https://twitter.com/share?';
@@ -56,7 +60,8 @@
                     twitterShareButtonHref += '&text='+document.title;
                     twitterShareButton.href = twitterShareButtonHref;
                 </script>
-            </button>
+                </button>
+            </a>
             <!-- compartir-->
         </div>
     </div>

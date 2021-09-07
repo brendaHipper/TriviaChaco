@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 *{
 	margin:0;
     margin-top:0;
@@ -54,8 +55,10 @@ body {
 	background-image: url("https://www.wowpatterns.com/assets/files/resource_images/cotton-flowers-pattern.jpg");	
 	background-color: rgb(77, 224, 101);
 	text-align: center;
-	padding-top: 0px;
+	padding-top: 0pc;
 }
+
+
 
 
 h1{
@@ -112,23 +115,24 @@ tr:hover td{
 .botones_finales a{
     text-decoration:none;
 }
-.botones_finales button {
-font-family: "Roboto", sans-serif;
-text-transform: uppercase;
-outline: 0;
-background: #c4b399;
-width: -webkit-fill-available;
-border: 0;
-padding: 15px;
-color: #f2f2f2;
-font-size: 14px;
--webkit-transition: all 0.3 ease;
-transition: all 0.3 ease;
-cursor: pointer;
-display:block;
-margin:auto 10px 10px;
+button {
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #df9b62;
+	color:#fffeff;
+	width: -webkit-fill-available;
+	border: 0;
+	padding: 15px;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+	display:block;
+	margin:auto;
+	font-weight:1000
 }
-.botones_finales button:hover{
-background: #fffffd;
-color:#906c54
+button:hover{
+	background: #906c54;
+	color: #f2f2f2;
 }

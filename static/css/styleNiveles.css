@@ -58,6 +58,8 @@ body {
 	padding-top: 0pc;
 }
 
+
+
 .main{
 	display:grid;
 	max-width: 50%;
@@ -110,8 +112,8 @@ a{
 }
 
 .main > section button:hover {
-	background: #fffffd;
-	color:#906c54
+	background: #906c54;
+	color:#ffffff;
 }
 
 .main > section button.active {

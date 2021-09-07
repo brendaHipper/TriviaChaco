@@ -128,135 +128,9 @@ h1 {
 	background: #fffffd;
 	color:#906c54
 }
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-*{
-	margin:0;
-    margin-top:0;
-}
-.menu{  
-    background-color: #906c54;
-    overflow: hidden;  
-    padding: 0px;
-    position: sticky;
-}
-.menu a{
-    float: right;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 20px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    box-sizing: border-box;
-    font-weight:1000;
-}  
-.direcciones:hover{
-    background-color:#fffeff;
-    color: #906c54;
-	cursor: pointer;
-}
-.menu a.active{
-    float: left;
-    background-color: #fffeff;
-    color: #ad6648;
-    padding: 20px 50px;
-    position: relative;
-    left: 15px;
-    font-weight:1000
-}   
-.menu a.user{
-    float: left;
-    color: #fffeff;
-    padding: 20px 50px;
-    position: relative;
-    left: 15px;
-    font-weight:1000;
-    margin:0 10px
-}   
-
-.caprincho {
-    width: 70px;
-    float: inherit;
-    position: absolute;
-    top: 10px;
-    left: -10px ;
-}
-body {
-	background-image: url("https://www.wowpatterns.com/assets/files/resource_images/cotton-flowers-pattern.jpg");	
-	background-color: rgb(77, 224, 101);
-	text-align: center;
-	padding-top: 0pc;
-}
-
-
-/* Caja del centro */
-#wrapper {
-	display:block ;
-	margin: 50px auto;
-	width: 50%;
-	height: auto;
-	background-color: #ffffff;
-	padding: 5%;
-	box-shadow: 1px 1px 7px -1px rgba(0, 0, 0, 0.59);
-}
-
-/* Titulo */
-h1 {
-  font-family: 'Staatliches', cursive;
-  letter-spacing: 4px;
-  font-size: 2em;
-  color: #000;
-  text-align: center;
-  margin-bottom: 5%;
-}
-
-.form {
-	background: #906c54;
-	padding: 10px;
-	text-align: center;
-	margin-top: 10px; 
-	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-
-.quiz-container h3{
-	font-family: "Roboto", sans-serif;
-	outline: 0;
-	background: #f2f2f2;
-	width: -webkit-fill-available;;
-	border: 0;
-    margin: 1em;
-	padding: 15px;
-	font-size: 14px;
-}
-
-.quiz-container h3:hover{
-	background-color:#c4b399;
-	color:#f2f2f2;
-}
-
-.form-check-input:active{
-    background-color:#c4b399;
-	color:#f2f2f2;
-}
-.quiz-container button {
-	font-family: "Roboto", sans-serif;
-	text-transform: uppercase;
-	outline: 0;
-	background: #c4b399;
-	width: -webkit-fill-available;
-	border: 0;
-	padding: 15px;
-	color: #f2f2f2;
-	font-size: 14px;
-	-webkit-transition: all 0.3 ease;
-	transition: all 0.3 ease;
-	cursor: pointer;
-	display:block;
-	margin:auto 10px 10px;
-}
-.quiz-container button:hover{
-	background: #fffffd;
-	color:#906c54
+.botones_finales{
+		display:grid;
+		grid-template-columns:1fr 1fr
 }
 .botones_finales a{
 		text-decoration:none;
@@ -270,14 +144,24 @@ h1 {
 	border: 0;
 	padding: 15px;
 	color: #f2f2f2;
-	font-size: 14px;
+	font-size: 20px;
 	-webkit-transition: all 0.3 ease;
 	transition: all 0.3 ease;
 	cursor: pointer;
 	display:block;
 	margin:auto 10px 10px;
 }
-.botones_finales button:hover{
-	background: #fffffd;
-	color:#906c54
+i{
+	width:12%
 }
+.botones_finales button:hover{
+	background: #906c54;
+	color:#ffffff
+}
+.facebook{
+    background-color:#0000ffd6 !important
+}
+.twitter{
+	background-color:#005affd6 !important
+}
+
