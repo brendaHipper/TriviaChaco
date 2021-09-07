@@ -25,6 +25,8 @@ class PreguntaAdmin(admin.ModelAdmin):
     list_display = ['texto',]
     # Para que la consola tenga campos de busqueda, accede a las preguntas(texto) y a una posible respuesta con __texto
     search_fields = ['texto','preguntas__texto']
+    # Crea un filtro de preguntas por categorias y por nivel
+    list_filter = ['categoria','nivel',]
 
 # Clase que va mostrar los campos en pantalla
 class PreguntasRespondidasAdmin(admin.ModelAdmin):
@@ -34,8 +36,13 @@ class PreguntasRespondidasAdmin(admin.ModelAdmin):
     class Meta:
         model = PreguntasRespondidas
 
+# Clase que va mostrar nombre de usuario y puntaje en pantalla de admin
+class UsuariosAdmin(admin.ModelAdmin):
+    list_display=('usuario','puntaje_total')
+
 admin.site.register(PreguntasRespondidas)
 admin.site.register(Pregunta,PreguntaAdmin)
 admin.site.register(ElegirRespuesta)
-admin.site.register(QuizUsuario)
+# Se agrega la nueva clase creada UsuariosAdmin
+admin.site.register(QuizUsuario,UsuariosAdmin)
 

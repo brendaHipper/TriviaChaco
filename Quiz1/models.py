@@ -55,6 +55,10 @@ class QuizUsuario(models.Model):
 	usuario = models.OneToOneField(User, on_delete=models.CASCADE)
 	puntaje_total = models.DecimalField(verbose_name='Puntaje Total', default=0, decimal_places=2, max_digits=10)
 
+	# Se redefine string para que muestre los objetos usuario por su nombre
+	def __str__(self):
+		return self.usuario
+
 	# Método para obtener los intentos.
 	def crear_intentos(self, pregunta):
 		intento = PreguntasRespondidas(pregunta=pregunta, quizUser=self)
