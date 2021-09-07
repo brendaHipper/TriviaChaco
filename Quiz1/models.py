@@ -84,6 +84,8 @@ class QuizUsuario(models.Model):
 			pregunta_respondida.respuesta = respuesta_selecionada
 
 		else:
+			# se agrega si la respuesta es None
+			pregunta_respondida.respuesta is None
 			pregunta_respondida.respuesta = respuesta_selecionada
 
 		pregunta_respondida.save()

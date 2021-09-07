@@ -28,7 +28,7 @@ def niveles(request):
 
 def tablero(request):
 	# tomar los primeros 10 usuarios para mostrar en el tablero de posiciones
-	total_usaurios_quiz = QuizUsuario.objects.order_by('-puntaje_total')[:10]
+	total_usaurios_quiz = QuizUsuario.objects.order_by('-puntaje_total')[:5]
 	contador = total_usaurios_quiz.count()
 	# se cre un dicc con el nombre context para pasar los valores 
 	context = {
@@ -56,7 +56,7 @@ def jugar(request):
 		try:
 			opcion_selecionada = pregunta_respondida.pregunta.opciones.get(pk=respuesta_pk)
 		except ObjectDoesNotExist:
-			raise Http404
+			return redirect('resultado', pregunta_respondida.pk)
 
 		QuizUser.validar_intento(pregunta_respondida, opcion_selecionada)
 
